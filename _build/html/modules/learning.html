@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Specification of training on the Morpheo platform &#8212; morpheo 0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to morpheo’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="specification-of-training-on-the-morpheo-platform">
+<span id="specification-of-training-on-the-morpheo-platform"></span><h1>Specification of training on the Morpheo platform<a class="headerlink" href="#specification-of-training-on-the-morpheo-platform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-of-training-tasks">
+<span id="definition-of-training-tasks"></span><h2>Definition of Training tasks<a class="headerlink" href="#definition-of-training-tasks" title="Permalink to this headline">¶</a></h2>
+<p>The Morpheo platform can handle different machine learning problems.
+Problems are defined by members of the Dreemcare project.The first problem addressed by the platform is sleep stages classification, other potential problems are sleep apnea detection, insomnia detection.
+The definition of a problem requires the creation of a <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> and a set of data with corresponding targets.A <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> mainly defines what are the <strong>data targets</strong> and the <strong>performance metric</strong> used to evaluate machine learning models.
+A new <code class="docutils literal"><span class="pre">problem</span></code> must be registered in the <code class="docutils literal"><span class="pre">Orchestrator</span></code> by specifying the UUID of the <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> and other parameters, such as UUIDs of test data (see in <a class="reference external" href="#problem">Details on Problem</a>).</p>
+<p>For a given problem, different algorithms can be submitted.
+The submission is made through <code class="docutils literal"><span class="pre">Analytics</span></code> and managed by the <code class="docutils literal"><span class="pre">Orchestrator</span></code>, which registers the new algorithm and creates associated training tasks.
+We call an <code class="docutils literal"><span class="pre">algorithm</span></code> a problem solution that has not been trained, and a <code class="docutils literal"><span class="pre">model</span></code> when this algorithm has been trained.<strong>Training tasks are defined in two cases</strong>:</p>
+<ul class="simple">
+<li>when an algorithm is submitted.</li>
+<li>when new data are submitted, models are updated.It implies that <strong>only algorithms supporting online learning</strong> can be submitted to the platform.</li>
+</ul>
+<p>Training tasks are specified by the <code class="docutils literal"><span class="pre">Orchestrator</span></code> with the definition of a <code class="docutils literal"><span class="pre">learnuplet</span></code> (See in <a class="reference external" href="#learnuplet">Details on Learnuplet</a>), and are consumed by <code class="docutils literal"><span class="pre">Compute</span></code>.
+<code class="docutils literal"><span class="pre">Compute</span></code> does the training based on the <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code>, saves the resulting <code class="docutils literal"><span class="pre">model</span></code> after encryption in <code class="docutils literal"><span class="pre">Storage</span></code>, and sends the performances to the <code class="docutils literal"><span class="pre">Orchestrator</span></code>.</p>
+<p>Performances are computed on a <strong>test dataset, fixed for a given problem and not accessible</strong>.For now, no cross-validation is done and the <strong>performance is public</strong> (no public and private leaderboard).
+This choice is motivated by the fact that the platform is data-oriented: each time new data is uploaded, models are updated, which limit overfitting possibilities.
+This might change latter if needed.</p>
+<p>Performances are also computed on each train data and send by <code class="docutils literal"><span class="pre">Compute</span></code> to the <code class="docutils literal"><span class="pre">Orchestrator</span></code> as feedback on the training for <code class="docutils literal"><span class="pre">Analytics</span></code>.</p>
+<div class="section" id="training-hypothesis-summary">
+<span id="training-hypothesis-summary"></span><h3>Training hypothesis summary<a class="headerlink" href="#training-hypothesis-summary" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>model training at algorithm submission and at new data upload</li>
+<li>submission of algortihms supporting online learning only</li>
+<li>no cross-validation</li>
+<li>model performance transparency (no public and private leaderboard)</li>
+</ul>
+</div>
+<div class="section" id="a-name-problem-a-details-on-problem">
+<span id="a-name-problem-a-details-on-problem"></span><h3><a name="problem"></a> Details on Problem<a class="headerlink" href="#a-name-problem-a-details-on-problem" title="Permalink to this headline">¶</a></h3>
+<p>Problems are defined by a <code class="docutils literal"><span class="pre">problem</span></code> in the database of the <code class="docutils literal"><span class="pre">Orchestrator</span></code>. A <code class="docutils literal"><span class="pre">problem</span></code> contains the following elements:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">uuid</span></code>: a unique identifier of the problem</li>
+<li><code class="docutils literal"><span class="pre">workflow</span></code>: UUID of the associated <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code>.A <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> mainly defines what are the <strong>data targets</strong> and the <strong>performance metric</strong> used to evaluate machine learning models.
+An example of a <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> is given for sleep stages classification <a class="reference external" href="https://github.com/MorpheoOrg/hypnogram-wf">here</a>.</li>
+<li><code class="docutils literal"><span class="pre">timestamp_upload</span></code>: timestamp of the problem creation.</li>
+<li><code class="docutils literal"><span class="pre">test_dataset</span></code>: list of UUIDs of test data, which are not accessible, except by <code class="docutils literal"><span class="pre">Compute</span></code>to compute performances of submitted algorithms.</li>
+<li><code class="docutils literal"><span class="pre">size_train_dataset</span></code>: size of mini-batch for each training task.</li>
+</ul>
+</div>
+<div class="section" id="a-name-learnuplet-a-details-on-learnuplet">
+<span id="a-name-learnuplet-a-details-on-learnuplet"></span><h3><a name="learnuplet"></a> Details on Learnuplet<a class="headerlink" href="#a-name-learnuplet-a-details-on-learnuplet" title="Permalink to this headline">¶</a></h3>
+<p>A learning task is defined by a <code class="docutils literal"><span class="pre">learnuplet</span></code>. A <code class="docutils literal"><span class="pre">learnuplet</span></code> is constructed by the <code class="docutils literal"><span class="pre">Orchestrator</span></code> in two cases:</p>
+<ul class="simple">
+<li>when new data is uploaded</li>
+<li>when a new algorithm is uploaded
+It is then used by <code class="docutils literal"><span class="pre">Compute</span></code> to do the training.</li>
+</ul>
+<p>A learnuplet is made of the following elements:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">uuid</span></code>: a unique identifier of the task</li>
+<li><code class="docutils literal"><span class="pre">problem</span></code>: the UUID of the problem associated to the learning task.</li>
+<li><code class="docutils literal"><span class="pre">train_data</span></code>: list of train data UUIDs, on which the learning will be done.</li>
+<li><code class="docutils literal"><span class="pre">test_data</span></code>: list of test data UUIDs, on which the performance of the algorithm is computed.</li>
+<li><code class="docutils literal"><span class="pre">algo</span></code>: UUID of submitted algorithm.</li>
+<li><code class="docutils literal"><span class="pre">model_start</span></code>: UUID of model to be trained. If <code class="docutils literal"><span class="pre">rank=0</span></code>, this UUID is the same as <code class="docutils literal"><span class="pre">algo</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">model_end</span></code>: UUID of the model obtained after training of <code class="docutils literal"><span class="pre">model_start</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">rank</span></code>: rank of the task, which defines the order in which learnuplets must be trained. See in <a class="reference external" href="#learnuplet_construction">construction of a learnuplet</a> for more details.</li>
+<li><code class="docutils literal"><span class="pre">worker</span></code>: UUID of worker which is in charge of the training task defined by this learnuplet.</li>
+<li><code class="docutils literal"><span class="pre">status</span></code>: status of the training task. It can be <code class="docutils literal"><span class="pre">waiting</span></code> if we are waiting for a model training with a lower rank, <code class="docutils literal"><span class="pre">todo</span></code> if the traiing job can start, <code class="docutils literal"><span class="pre">pending</span></code> if a worker is currently consuming the task, or <code class="docutils literal"><span class="pre">done</span></code> if training has been done successfully, or <code class="docutils literal"><span class="pre">failed</span></code>is trainig has been unsuccesfully done.</li>
+<li><code class="docutils literal"><span class="pre">train_perf</span></code>: list of performances on train data.</li>
+<li><code class="docutils literal"><span class="pre">perf</span></code>: performance on test data.</li>
+<li><code class="docutils literal"><span class="pre">training_creation</span></code>: timestamp of the learnuplet creation.</li>
+<li><code class="docutils literal"><span class="pre">training_done</span></code>: timestamp of feeback from compute (when updating <code class="docutils literal"><span class="pre">status</span></code> to <code class="docutils literal"><span class="pre">done</span></code> or <code class="docutils literal"><span class="pre">failed</span></code>).</li>
+</ul>
+</div>
+<div class="section" id="a-name-learnuplet-construction-a-details-on-the-construction-of-a-learnuplet-at-algorithm-upload">
+<span id="a-name-learnuplet-construction-a-details-on-the-construction-of-a-learnuplet-at-algorithm-upload"></span><h3><a name="learnuplet_construction"></a> Details on the construction of a learnuplet at algorithm upload<a class="headerlink" href="#a-name-learnuplet-construction-a-details-on-the-construction-of-a-learnuplet-at-algorithm-upload" title="Permalink to this headline">¶</a></h3>
+<p>When uploading a new algorithm, its training is specified in <code class="docutils literal"><span class="pre">learnuplets</span></code> by the <code class="docutils literal"><span class="pre">Orchestrator</span></code>.</p>
+<p>For now, they are constructed following these steps:</p>
+<ol class="simple">
+<li>selection of associated <code class="docutils literal"><span class="pre">active</span> <span class="pre">data</span></code>: for now all data corresponding to the same problem with targets.This might change later to lower computational costs.</li>
+<li>for each mini-batch containing <code class="docutils literal"><span class="pre">size_train_dataset</span></code> (parameter fixed for the <code class="docutils literal"><span class="pre">problem</span></code>), creation of a learnuplet.The first learnuplet has <code class="docutils literal"><span class="pre">rank=0</span></code> and <code class="docutils literal"><span class="pre">status=todo</span></code>, and other have incremental values of <code class="docutils literal"><span class="pre">rank</span></code> and <code class="docutils literal"><span class="pre">status=waiting</span></code>.
+Each learnuplet contains the UUID of the model from which to start the training and UUID where to save the model after training.Model from which to start the learning is not defined for learnuplets with <code class="docutils literal"><span class="pre">status=waiting</span></code> (and <code class="docutils literal"><span class="pre">rank=i</span></code>) at learnuplet creation, but when <code class="docutils literal"><span class="pre">performance</span></code> of <code class="docutils literal"><span class="pre">learnuplet</span></code> with <code class="docutils literal"><span class="pre">rank=i-1</span></code> is registered on the <code class="docutils literal"><span class="pre">Orchestrator</span></code>. At this moment, the <code class="docutils literal"><span class="pre">Orchestrator</span></code> looks for the <code class="docutils literal"><span class="pre">model_end</span></code> of the <code class="docutils literal"><span class="pre">learnuplet</span></code> with the best performance to choose it as the <code class="docutils literal"><span class="pre">model_start</span></code> for learnuplet of <code class="docutils literal"><span class="pre">rank=i</span></code>, which <code class="docutils literal"><span class="pre">status</span></code> is now <code class="docutils literal"><span class="pre">todo</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="details-on-the-construction-of-a-learnuplet-at-data-upload">
+<span id="details-on-the-construction-of-a-learnuplet-at-data-upload"></span><h3>Details on the construction of a learnuplet at data upload<a class="headerlink" href="#details-on-the-construction-of-a-learnuplet-at-data-upload" title="Permalink to this headline">¶</a></h3>
+<p>When uploading new data, relevant models are updated.</p>
+<p>For now, the construction of corresponding <code class="docutils literal"><span class="pre">learnuplets</span></code> is made as follows:</p>
+<ol class="simple">
+<li>selection of relevant models called <code class="docutils literal"><span class="pre">active</span> <span class="pre">models</span></code>: for now all models corresponding to the same problem.This might change later to lower computational costs.</li>
+<li>for each algorithm:</li>
+</ol>
+<ul class="simple">
+<li>2.1 find the model which has the best performance (which is not necessarily the one with the highest rank).</li>
+<li>2.2 for each mini-batch containing <code class="docutils literal"><span class="pre">size_train_dataset</span></code> (parameter fixed for the <code class="docutils literal"><span class="pre">problem</span></code>), creation of a learnuplet starting from the model found in 2.1.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="algorithm-submission">
+<span id="algorithm-submission"></span><h2>Algorithm submission<a class="headerlink" href="#algorithm-submission" title="Permalink to this headline">¶</a></h2>
+<p>Algorithms submitted to the platform must support <strong>online learning</strong>, since models are updated each time new data are uploaded.This is the case for all <strong>neural networks</strong>.Algorithms implemented in the package <code class="docutils literal"><span class="pre">scikit</span> <span class="pre">learn</span></code> can be used if they offer a <code class="docutils literal"><span class="pre">partial_fit</span></code> method (or a <code class="docutils literal"><span class="pre">warm_start</span></code> option, TODO: check...).</p>
+<p>A submission corresponds to the submission of a <a class="reference external" href="https://docs.docker.com/engine/getstarted/">Docker</a>. It must contain the following elements:</p>
+<ul class="simple">
+<li>a <code class="docutils literal"><span class="pre">train.sh</span></code></li>
+</ul>
+<p>An example of a submission is given for sleep stages classification <a class="reference external" href="https://github.com/MorpheoOrg/hypnogram-wf">here</a>.</p>
+<div class="section" id="note-about-saving-trained-models">
+<span id="note-about-saving-trained-models"></span><h3>Note about saving trained models:<a class="headerlink" href="#note-about-saving-trained-models" title="Permalink to this headline">¶</a></h3>
+<p>Saving format is let free for now, since it is part of the code submitted for an algorithm.</p>
+<ul class="simple">
+<li>for neural networks, best solution is to save them in h5 files</li>
+<li>for sklearn models, avoid using <a class="reference external" href="http://scikit-learn.org/stable/modules/model_persistence.html">Pickle</a>, since it has &#8220;some issues regarding maintainability and security&#8221;. Better to use json (be careful with numpy array and sklearn objects).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="training-phase">
+<span id="training-phase"></span><h2>Training phase<a class="headerlink" href="#training-phase" title="Permalink to this headline">¶</a></h2>
+<p>The workflow of the training phase is the following:
+<center><img src='img/training.png' height='506'></center></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Specification of training on the Morpheo platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-of-training-tasks">Definition of Training tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#algorithm-submission">Algorithm submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-phase">Training phase</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to morpheo&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/learning.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Mathieu Galtier, Camille Marini.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/modules/learning.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
