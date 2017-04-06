@@ -2,7 +2,7 @@
 
 Morpheo architecture is organized as below:
 
-![Morpheo Architecture](https://github.com/MorpheoOrg/morpheo/img/archi.png)
+![Morpheo Architecture](https://github.com/MorpheoOrg/morpheo/blob/master/img/archi.png?raw=true)
 
 
 ### Viewer
