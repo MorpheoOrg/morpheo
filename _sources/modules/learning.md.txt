@@ -114,5 +114,5 @@ Saving format is let free for now, since it is part of the code submitted for an
 
 The workflow of the training phase is the following:
 
-![training workflow](https://github.com/MorpheoOrg/morpheo/blob/master/img/training.png?raw=true)
+![training workflow](img/training.png)
 
