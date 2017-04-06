@@ -1,4 +1,4 @@
-# Specification of training on the Morpheo platform
+# Training on Morpheo 
 
 
 ## Definition of Training tasks 
@@ -113,4 +113,7 @@ Saving format is let free for now, since it is part of the code submitted for an
 ## Training phase
 
 The workflow of the training phase is the following:
+
+![training workflow](https://github.com/MorpheoOrg/morpheo/img/training.png)
+
 <center><img src='img/training.png' height='506'></center>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="470.80725"
+   height="1064.8262"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="training.svg"
+   inkscape:export-filename="/Users/camille/Documents/DeepSee/Morpheo/morpheo/img/training.png"
+   inkscape:export-xdpi="120"
+   inkscape:export-ydpi="120">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path4016"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4010"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="212.17268"
+     inkscape:cy="433.69741"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="665"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3999"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="-53.710037px"
+       originy="51.397508px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-53.710037,-38.933594)">
+    <rect
+       style="fill:none;stroke:#00bcd4;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985"
+       width="222.5067"
+       height="116.50249"
+       x="55.710037"
+       y="142.01352" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="62.571785"
+       y="160.64786"
+       id="text3755"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3757"
+         x="62.571785"
+         y="160.64786"
+         style="font-weight:bold;fill:#00bcd4;-inkscape-font-specification:Sans Bold">Common Compute Docker:</tspan><tspan
+         sodipodi:role="line"
+         x="62.571785"
+         y="178.14786"
+         id="tspan3814">- Get train and test data</tspan><tspan
+         sodipodi:role="line"
+         x="62.571785"
+         y="195.64786"
+         id="tspan3778">- Get model</tspan><tspan
+         sodipodi:role="line"
+         x="62.571785"
+         y="213.14786"
+         id="tspan3794">- Decrypt data and model</tspan><tspan
+         sodipodi:role="line"
+         x="62.571785"
+         y="230.64786"
+         id="tspan3808">- Save hdf5 in volume V0</tspan><tspan
+         sodipodi:role="line"
+         x="62.571785"
+         y="248.14786"
+         id="tspan3810">- Save docker of model</tspan></text>
+    <rect
+       style="fill:none;stroke:#4e0075;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3780"
+       width="167.71428"
+       height="64.285713"
+       x="83.106247"
+       y="40.933594" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="88.832039"
+       y="58.076477"
+       id="text3786"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3788"
+         x="88.832039"
+         y="58.076477"><tspan
+   style="font-weight:bold;fill:#4e0075;-inkscape-font-specification:Sans Bold;fill-opacity:1"
+   id="tspan3798">Learnuplet</tspan>: UUIDs of </tspan><tspan
+         sodipodi:role="line"
+         x="88.832039"
+         y="75.576477"
+         id="tspan3790">train data, test data, </tspan><tspan
+         sodipodi:role="line"
+         x="88.832039"
+         y="93.076477"
+         id="tspan3806">problem, and model </tspan></text>
+    <rect
+       style="fill:none;stroke:#bf3bdb;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3812"
+       width="128.76929"
+       height="66.490532"
+       x="346.8793"
+       y="161.0145" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="411.53738"
+       y="180.36212"
+       id="text3816"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3818"
+         x="411.53738"
+         y="180.36212"
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#bf3bdb;-inkscape-font-specification:Sans Bold;fill-opacity:1">V0:</tspan><tspan
+         sodipodi:role="line"
+         x="411.53738"
+         y="197.86212"
+         id="tspan3826"
+         style="text-align:center;text-anchor:middle">- train.hdf5</tspan><tspan
+         sodipodi:role="line"
+         x="411.53738"
+         y="215.36212"
+         style="text-align:center;text-anchor:middle"
+         id="tspan3839">- test.hdf5</tspan></text>
+    <rect
+       y="293.15643"
+       x="300.01059"
+       height="99.931061"
+       width="222.5067"
+       id="rect3841"
+       style="fill:none;stroke:#00bcd4;stroke-width:3.7046113;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3843"
+       y="311.79071"
+       x="307.73709"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;fill:#00bcd4;-inkscape-font-specification:Sans Bold"
+         y="311.79071"
+         x="307.73709"
+         id="tspan3845"
+         sodipodi:role="line">Problem workflow Docker:</tspan><tspan
+         y="329.29071"
+         x="307.73709"
+         sodipodi:role="line"
+         id="tspan3871">- Copy train.hdf5 and </tspan><tspan
+         y="346.79071"
+         x="307.73709"
+         sodipodi:role="line"
+         id="tspan3877">test.hdf5 in volume V1</tspan><tspan
+         y="364.29071"
+         x="307.73709"
+         sodipodi:role="line"
+         id="tspan3875">- Remove target from </tspan><tspan
+         y="381.79071"
+         x="307.73709"
+         sodipodi:role="line"
+         id="tspan3879">test.hdf5 in V1</tspan></text>
+    <rect
+       y="433.01453"
+       x="346.8793"
+       height="79.919106"
+       width="128.76929"
+       id="rect3881"
+       style="fill:none;stroke:#bf3bdb;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3883"
+       y="452.36212"
+       x="410.66238"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#bf3bdb;-inkscape-font-specification:Sans Bold;fill-opacity:1"
+         y="452.36212"
+         x="410.66238"
+         id="tspan3885"
+         sodipodi:role="line">V1:</tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         id="tspan3887"
+         y="469.86212"
+         x="410.66238"
+         sodipodi:role="line">- train.hdf5</tspan><tspan
+         id="tspan3889"
+         style="text-align:center;text-anchor:middle"
+         y="487.36212"
+         x="412.8909"
+         sodipodi:role="line">- test.hdf5 </tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         y="504.86212"
+         x="412.8909"
+         sodipodi:role="line"
+         id="tspan3891">(without target) </tspan></text>
+    <rect
+       style="fill:none;stroke:#00bcd4;stroke-width:3.7046113;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3893"
+       width="222.5067"
+       height="99.931061"
+       x="55.710037"
+       y="425.44214" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="63.436531"
+       y="444.07642"
+       id="text3895"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3897"
+         x="63.436531"
+         y="444.07642"
+         style="font-weight:bold;fill:#00bcd4;-inkscape-font-specification:Sans Bold">Model Docker:</tspan><tspan
+         id="tspan3905"
+         sodipodi:role="line"
+         x="63.436531"
+         y="461.57642">- Train model</tspan><tspan
+         sodipodi:role="line"
+         x="63.436531"
+         y="479.07642"
+         id="tspan3916">- Save trained model</tspan><tspan
+         sodipodi:role="line"
+         x="63.436531"
+         y="496.57642"
+         id="tspan3918">- Save predictions on test </tspan><tspan
+         sodipodi:role="line"
+         x="63.436531"
+         y="514.07642"
+         id="tspan3924">data in test.hdf5 in volume V1</tspan></text>
+    <rect
+       style="fill:none;stroke:#bf3bdb;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3926"
+       width="128.76929"
+       height="100.49053"
+       x="346.02216"
+       y="551.58594" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="409.80524"
+       y="570.93353"
+       id="text3928"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3930"
+         x="409.80524"
+         y="570.93353"
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#bf3bdb;-inkscape-font-specification:Sans Bold;fill-opacity:1">V1:</tspan><tspan
+         sodipodi:role="line"
+         x="409.80524"
+         y="588.43353"
+         id="tspan3932"
+         style="text-align:center;text-anchor:middle">- train.hdf5</tspan><tspan
+         id="tspan3936"
+         sodipodi:role="line"
+         x="412.03375"
+         y="605.93353"
+         style="text-align:center;text-anchor:middle">- test.hdf5 (with </tspan><tspan
+         sodipodi:role="line"
+         x="409.80524"
+         y="623.43353"
+         style="text-align:center;text-anchor:middle"
+         id="tspan3940">predicted target)</tspan><tspan
+         sodipodi:role="line"
+         x="412.03375"
+         y="640.93353"
+         style="text-align:center;text-anchor:middle"
+         id="tspan3942">- trained model </tspan></text>
+    <rect
+       style="fill:none;stroke:#00bcd4;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3944"
+       width="222.5067"
+       height="81.49765"
+       x="300.01059"
+       y="691.72784" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="307.73709"
+       y="710.36212"
+       id="text3946"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3948"
+         x="307.73709"
+         y="710.36212"
+         style="font-weight:bold;fill:#00bcd4;-inkscape-font-specification:Sans Bold">Problem workflow Docker:</tspan><tspan
+         id="tspan3956"
+         sodipodi:role="line"
+         x="307.73709"
+         y="727.86212">- Compute performances </tspan><tspan
+         sodipodi:role="line"
+         x="307.73709"
+         y="745.36212"
+         id="tspan3967">using test.hdf5 from V0 and </tspan><tspan
+         sodipodi:role="line"
+         x="307.73709"
+         y="762.86212"
+         id="tspan3979">V1</tspan><tspan
+         sodipodi:role="line"
+         x="307.73709"
+         y="780.36212"
+         id="tspan3995" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 162.63456,107.86955 c 0,31.31473 0,31.31473 0,31.31473"
+       id="path4001"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4635"
+       d="m 162.63456,260.40258 c 0,160.29246 0,160.29246 0,160.29246"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4637"
+       d="m 280.57748,191.95713 c 61.84577,0 61.84577,0 61.84577,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4639"
+       d="m 409.11178,228.09801 c 0,60.60442 0,60.60442 0,60.60442"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 409.11178,394.77318 c 0,33.95499 0,33.95499 0,33.95499"
+       id="path4641"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4643"
+       d="m 345.01692,474.12 c -60.70309,0 -60.70309,0 -60.70309,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 161.62441,526.07271 1.01015,72.73098 179.80715,-1.01015"
+       id="path4649"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4835"
+       d="m 409.11178,653.37223 c 0,33.95499 0,33.95499 0,33.95499"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <rect
+       y="969.68579"
+       x="301.56717"
+       height="132.07391"
+       width="222.5067"
+       id="rect3053"
+       style="fill:none;stroke:#00bcd4;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3055"
+       y="988.32013"
+       x="308.42892"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;fill:#00bcd4;-inkscape-font-specification:Sans Bold"
+         y="988.32013"
+         x="308.42892"
+         id="tspan3057"
+         sodipodi:role="line">Common Compute Docker:</tspan><tspan
+         id="tspan3067"
+         y="1005.8201"
+         x="308.42892"
+         sodipodi:role="line">- Send performance to </tspan><tspan
+         y="1023.3201"
+         x="308.42892"
+         sodipodi:role="line"
+         id="tspan3139">Orchestrator</tspan><tspan
+         y="1040.8201"
+         x="308.42892"
+         sodipodi:role="line"
+         id="tspan3141">- Create new model docker </tspan><tspan
+         y="1058.3201"
+         x="308.42892"
+         sodipodi:role="line"
+         id="tspan3143">adding the trained model</tspan><tspan
+         y="1075.8201"
+         x="308.42892"
+         sodipodi:role="line"
+         id="tspan3145">- Encrypt new model and </tspan><tspan
+         y="1093.3201"
+         x="308.42892"
+         sodipodi:role="line"
+         id="tspan3147">send it to Storage</tspan></text>
+    <rect
+       y="811.58594"
+       x="346.02216"
+       height="116.06196"
+       width="128.76929"
+       id="rect3929"
+       style="fill:none;stroke:#bf3bdb;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3931"
+       y="830.93353"
+       x="409.80524"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#bf3bdb;-inkscape-font-specification:Sans Bold;fill-opacity:1"
+         y="830.93353"
+         x="409.80524"
+         id="tspan3933"
+         sodipodi:role="line">V1:</tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         id="tspan3935"
+         y="848.43353"
+         x="409.80524"
+         sodipodi:role="line">- train.hdf5</tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         y="865.93353"
+         x="412.03375"
+         sodipodi:role="line"
+         id="tspan3937">- test.hdf5 (with </tspan><tspan
+         id="tspan3939"
+         style="text-align:center;text-anchor:middle"
+         y="883.43353"
+         x="409.80524"
+         sodipodi:role="line">predicted target)</tspan><tspan
+         id="tspan3941"
+         style="text-align:center;text-anchor:middle"
+         y="900.93353"
+         x="409.80524"
+         sodipodi:role="line">- trained model</tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         y="918.43353"
+         x="412.03375"
+         sodipodi:role="line"
+         id="tspan3947">- performances </tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 409.11178,775.51509 c 0,33.95499 0,33.95499 0,33.95499"
+       id="path3943"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3949"
+       d="m 409.11178,929.8008 c 0,33.95499 0,33.95499 0,33.95499"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+  </g>
+</svg>
