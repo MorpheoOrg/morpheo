@@ -65,8 +65,9 @@ A learnuplet is made of the following elements:
 - `rank`: rank of the task, which defines the order in which learnuplets must be trained. See in [construction of a learnuplet](#learnuplet_construction) for more details.   
 - `worker`: UUID of worker which is in charge of the training task defined by this learnuplet.  
 - `status`: status of the training task. It can be `waiting` if we are waiting for a model training with a lower rank, `todo` if the traiing job can start, `pending` if a worker is currently consuming the task, or `done` if training has been done successfully, or `failed`is trainig has been unsuccesfully done.  
-- `train_perf`: list of performances on train data.  
 - `perf`: performance on test data.  
+- `test_perf`: list of performances on test data: each element is the performance on one test data file (same order as data uuid in `test_data`).    
+- `train_perf`: list of performances on train data: each element is the performance on one train data file (same order as data uuid in `train_data`).    
 - `training_creation`: timestamp of the learnuplet creation.
 - `training_done`: timestamp of feeback from compute (when updating `status` to `done` or `failed`).
 
