@@ -23,7 +23,7 @@ Detailed documentation:
 
 Wharehouse of encrypted data and algorithms. 
 
-Detailed documentation here (TODO).  
+Detailed documentation [here](https://morpheoorg.github.io/morpheo-storage).
 
 ### Compute
 
