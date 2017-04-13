@@ -3,7 +3,7 @@
 ## Definition of a machine learning problem on Morpheo
 
 The Morpheo platform can handle different machine learning problems. 
-Problems are defined by members of the Dreemcare project.  
+Problems are defined by members of the plaform administrators.  
 The first problem addressed by the platform is sleep stages classification, other potential problems are sleep apnea detection, insomnia detection. 
 The definition of a problem requires the creation of a `problem workflow` and a set of data with corresponding targets.  
 A `problem workflow` mainly defines what are the **data targets** and the **performance metric** used to evaluate machine learning models.
@@ -16,14 +16,14 @@ A new `problem` must be registered in the `Orchestrator` by specifying the UUID 
 For a given problem, different algorithms can be submitted. 
 The submission is made through `Analytics` and managed by the `Orchestrator`, which registers the new algorithm and creates associated training tasks. 
 We call an `algorithm` a problem solution that has not been trained, and a `model` when this algorithm has been trained.   
-**Training tasks are defined in two cases**:  
+**Training tasks are created in two cases**:  
 - when an algorithm is submitted.  
 - when new data are submitted, models are updated.   
 It implies that **only algorithms supporting online learning** can be submitted to the platform.   
 
  
 Training tasks are specified by the `Orchestrator` with the definition of a `learnuplet` (see in [Details on Learnuplet](#learnuplet)), and are consumed by `Compute`.
-`Compute` does the training based on the `problem workflow`, saves the resulting `model` after encryption in `Storage`, and sends the performances to the `Orchestrator`.  
+`Compute` does the training based on the `problem workflow`, saves the resulting `model` in `Storage` after encryption, and sends the performances to the `Orchestrator`.  
 
 Performances are computed on a **test dataset, fixed for a given problem and not accessible**.  
 For now, no cross-validation is done and the **performance is public** (no public and private leaderboard). 
@@ -82,9 +82,10 @@ For now, they are constructed following these steps:
 1. selection of associated `active data`: for now all data corresponding to the same problem with targets.  
 This might change later to lower computational costs.  
 2. for each mini-batch containing `size_train_dataset` (parameter fixed for the `problem`), creation of a learnuplet.   
-The first learnuplet has `rank=0` and `status=todo`, and other have incremental values of `rank` and `status=waiting`. 
-Each learnuplet contains the UUID of the model from which to start the training and UUID where to save the model after training.   
-Model from which to start the learning is not defined for learnuplets with `status=waiting` (and `rank=i`) at learnuplet creation, but when `performance` of `learnuplet` with `rank=i-1` is registered on the `Orchestrator`. At this moment, the `Orchestrator` looks for the `model_end` of the `learnuplet` with the best performance to choose it as the `model_start` for learnuplet of `rank=i`, which `status` is now `todo`.
+Each learnuplet contains the UUID of the model from which to start the training in `model_start`and UUID where to save the model after training in `model_end`.   
+The first learnuplet has `rank=0`, `status=todo` and a specified `model_start`
+, and other have incremental values of `rank`, `status=todo` and nothing in `model_start` (filled later). 
+Model from which to start the learning is not defined for learnuplets with `rank=i` at learnuplet creation, but when `performance` of `learnuplet` with `rank=i-1` is registered on the `Orchestrator`. At this moment, the `Orchestrator` looks for the `model_end` of the `learnuplet` with the best performance to choose it as the `model_start` for learnuplet of `rank=i`.
 
 #### Details on the construction of a learnuplet at data upload
 
