@@ -17,15 +17,9 @@ This website gathers all technical documentation of the Morpheo platform.
    :maxdepth: 2
    :caption: Contents:
 
-   modules/architecture.md
+   modules/introduction.md
    modules/learning.md
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 
 .. _Morpheo website: http://morpheo.co/

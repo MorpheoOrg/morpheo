@@ -1,7 +1,6 @@
-# Training on Morpheo 
+# Machine learning mechanisms on Morpheo
 
-
-## Definition of Training tasks 
+## Definition of a machine learning problem on Morpheo
 
 The Morpheo platform can handle different machine learning problems. 
 Problems are defined by members of the Dreemcare project.  
@@ -9,6 +8,10 @@ The first problem addressed by the platform is sleep stages classification, othe
 The definition of a problem requires the creation of a `problem workflow` and a set of data with corresponding targets.  
 A `problem workflow` mainly defines what are the **data targets** and the **performance metric** used to evaluate machine learning models.
 A new `problem` must be registered in the `Orchestrator` by specifying the UUID of the `problem workflow` and other parameters, such as UUIDs of test data (see in [Details on Problem](#problem)). 
+
+## Training on Morpheo 
+
+### Definition of Training tasks 
 
 For a given problem, different algorithms can be submitted. 
 The submission is made through `Analytics` and managed by the `Orchestrator`, which registers the new algorithm and creates associated training tasks. 
@@ -19,7 +22,7 @@ We call an `algorithm` a problem solution that has not been trained, and a `mode
 It implies that **only algorithms supporting online learning** can be submitted to the platform.   
 
  
-Training tasks are specified by the `Orchestrator` with the definition of a `learnuplet` (See in [Details on Learnuplet](#learnuplet)), and are consumed by `Compute`.
+Training tasks are specified by the `Orchestrator` with the definition of a `learnuplet` (see in [Details on Learnuplet](#learnuplet)), and are consumed by `Compute`.
 `Compute` does the training based on the `problem workflow`, saves the resulting `model` after encryption in `Storage`, and sends the performances to the `Orchestrator`.  
 
 Performances are computed on a **test dataset, fixed for a given problem and not accessible**.  
@@ -29,14 +32,14 @@ This might change latter if needed.
 
 Performances are also computed on each train data and send by `Compute` to the `Orchestrator` as feedback on the training for `Analytics`. 
 
-### Training hypothesis summary
+#### Training hypothesis summary
 
 - model training at algorithm submission and at new data upload 
 - submission of algortihms supporting online learning only  
 - no cross-validation  
 - model performance transparency (no public and private leaderboard)  
 
-### <a name="problem"></a> Details on Problem
+#### <a name="problem"></a> Details on Problem
 
 Problems are defined by a `problem` in the database of the `Orchestrator`. A `problem` contains the following elements:
 - `uuid`: a unique identifier of the problem  
@@ -47,7 +50,7 @@ An example of a `problem workflow` is given for sleep stages classification [her
 - `test_dataset`: list of UUIDs of test data, which are not accessible, except by `Compute`to compute performances of submitted algorithms.
 - `size_train_dataset`: size of mini-batch for each training task. 
 
-### <a name="learnuplet"></a> Details on Learnuplet
+#### <a name="learnuplet"></a> Details on Learnuplet
 
 A learning task is defined by a `learnuplet`. A `learnuplet` is constructed by the `Orchestrator` in two cases: 
 - when new data is uploaded  
@@ -71,7 +74,7 @@ A learnuplet is made of the following elements:
 - `training_creation`: timestamp of the learnuplet creation.
 - `training_done`: timestamp of feeback from compute (when updating `status` to `done` or `failed`).
 
-### <a name="learnuplet_construction"></a> Details on the construction of a learnuplet at algorithm upload
+#### <a name="learnuplet_construction"></a> Details on the construction of a learnuplet at algorithm upload
 
 When uploading a new algorithm, its training is specified in `learnuplets` by the `Orchestrator`.  
 
@@ -83,7 +86,7 @@ The first learnuplet has `rank=0` and `status=todo`, and other have incremental 
 Each learnuplet contains the UUID of the model from which to start the training and UUID where to save the model after training.   
 Model from which to start the learning is not defined for learnuplets with `status=waiting` (and `rank=i`) at learnuplet creation, but when `performance` of `learnuplet` with `rank=i-1` is registered on the `Orchestrator`. At this moment, the `Orchestrator` looks for the `model_end` of the `learnuplet` with the best performance to choose it as the `model_start` for learnuplet of `rank=i`, which `status` is now `todo`.
 
-### Details on the construction of a learnuplet at data upload
+#### Details on the construction of a learnuplet at data upload
 
 When uploading new data, relevant models are updated.  
 
@@ -94,7 +97,7 @@ This might change later to lower computational costs.
   - 2.1 find the model which has the best performance (which is not necessarily the one with the highest rank).
   - 2.2 for each mini-batch containing `size_train_dataset` (parameter fixed for the `problem`), creation of a learnuplet starting from the model found in 2.1.  
 
-## Algorithm submission
+### Algorithm submission
 
 Algorithms submitted to the platform must support **online learning**, since models are updated each time new data are uploaded.  
 This is the case for all **neural networks**.  
@@ -106,14 +109,17 @@ A submission corresponds to the submission of a [Docker](https://docs.docker.com
 
 An example of a submission is given for sleep stages classification [here](https://github.com/MorpheoOrg/hypnogram-wf).
 
-#### Note about saving trained models:  
+##### Note about saving trained models:  
 Saving format is let free for now, since it is part of the code submitted for an algorithm.
 - for neural networks, best solution is to save them in h5 files
 - for sklearn models, avoid using [Pickle](http://scikit-learn.org/stable/modules/model_persistence.html), since it has "some issues regarding maintainability and security". Better to use json (be careful with numpy array and sklearn objects).
 
-## Training phase
+### Training phase
 
 The workflow of the training phase is the following:
 
 ![training workflow](img/training.png)
 
+## Predictions on Morpheo 
+
+TODO
