@@ -3,7 +3,7 @@
 ## Definition of a machine learning problem on Morpheo
 
 The Morpheo platform can handle different machine learning problems. 
-Problems are defined by members of the Dreemcare project.  
+Problems are defined by members of the platform administration.  
 The first problem addressed by the platform is sleep stages classification, other potential problems are sleep apnea detection, insomnia detection. 
 The definition of a problem requires the creation of a `problem workflow` and a set of data with corresponding targets.  
 A `problem workflow` mainly defines what are the **data targets** and the **performance metric** used to evaluate machine learning models.
@@ -16,14 +16,14 @@ A new `problem` must be registered in the `Orchestrator` by specifying the UUID 
 For a given problem, different algorithms can be submitted. 
 The submission is made through `Analytics` and managed by the `Orchestrator`, which registers the new algorithm and creates associated training tasks. 
 We call an `algorithm` a problem solution that has not been trained, and a `model` when this algorithm has been trained.   
-**Training tasks are defined in two cases**:  
+**Training tasks are created in two cases**:  
 - when an algorithm is submitted.  
 - when new data are submitted, models are updated.   
 It implies that **only algorithms supporting online learning** can be submitted to the platform.   
 
  
 Training tasks are specified by the `Orchestrator` with the definition of a `learnuplet` (see in [the Orchestrator documentation for more details on Learnuplet](https://morpheoorg.github.io/morpheo-orchestrator/modules/collections.html#collection-learnuplet)), and are consumed by `Compute`.
-`Compute` does the training based on the `problem workflow`, saves the resulting `model` after encryption in `Storage`, and sends the performances to the `Orchestrator`.  
+`Compute` does the training based on the `problem workflow`, saves the resulting `model` in `Storage` after encryption, and sends the performances to the `Orchestrator`.  
 
 Performances are computed on a **test dataset, fixed for a given problem and not accessible**.  
 For now, no cross-validation is done and the **performance is public** (no public and private leaderboard). 
