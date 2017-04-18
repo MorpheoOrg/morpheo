@@ -11,13 +11,13 @@ Morpheo architecture is organized as below:
 
 ### Viewer
 
-Entry door for data providers.  
+Entry door for data providers. This is part of the data client described in the white-paper.   
 
 Detailed documentation here (TODO).  
 
 ### Analytics and Notebook 
 
-Entry door for algorithms providers. 
+Entry door for algorithms providers. This is part of the data client described in the white-paper.  
 
 Detailed documentation:
 - here for Analytics (TODO) 
@@ -31,7 +31,7 @@ Detailed documentation [here](https://morpheoorg.github.io/morpheo-storage).
 
 ### Compute
 
-Secured containers consuming learning and prediction tasks.  
+Secured containers performing learning and prediction tasks.  
 
 Detailed documentation here (TODO).  
 
