@@ -11,7 +11,7 @@ Morpheo architecture is organized as below:
 
 ### Viewer
 
-Entry door for data providers. This is part of the data client described in the white-paper.   
+Entry door for data providers. This is part of the data client described in the white-paper.  
 
 Detailed documentation here (TODO).  
 
