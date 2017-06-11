@@ -63,6 +63,11 @@ The workflow of the training phase is the following:
 
 ![training workflow](img/training.png)
 
+This workflow assumes the following file architecture:
+
+![training folders](img/folders.png)
+
+
 ## Predictions on Morpheo 
 
 A user can request a prediction on the platform using the `Viewer`, which transfers the request to the `Orchestrator`. 
