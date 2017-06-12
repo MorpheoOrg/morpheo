@@ -27,13 +27,13 @@ Detailed documentation:
 
 Wharehouse of encrypted data and algorithms. 
 
-Detailed documentation [here](https://morpheoorg.github.io/morpheo-storage).
+Detailed documentation [here](https://github.com/MorpheoOrg/storage).
 
 ### Compute
 
 Secured containers performing learning and prediction tasks.  
 
-Detailed documentation here (TODO).  
+Detailed documentation [here](https://github.com/MorpheoOrg/compute).  
 
 ### Orchestrator 
 
