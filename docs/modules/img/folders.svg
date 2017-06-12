@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="folders.svg"
-   inkscape:export-filename="/home/camille/Documents/Problems/hypnogram-wf/folders.png"
+   inkscape:export-filename="/home/camille/Documents/MorpheoDoc/morpheo/docs/modules/img/folders.png"
    inkscape:export-xdpi="120"
    inkscape:export-ydpi="120">
   <defs
@@ -29,15 +29,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="312.84578"
+     inkscape:cx="227.74043"
      inkscape:cy="-10.552982"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g19716"
      showgrid="false"
-     inkscape:window-width="2495"
-     inkscape:window-height="1416"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
+     inkscape:window-width="1871"
+     inkscape:window-height="1062"
+     inkscape:window-x="333"
+     inkscape:window-y="18"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -62,53 +62,50 @@
      transform="translate(-129.49999,-11.172534)">
     <g
        id="g19716">
-      <g
-         id="g19677">
-        <rect
-           style="opacity:1;fill:none;stroke:#3f3d61;stroke-width:1.33674192;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
-           id="rect19012"
-           width="253.94897"
-           height="98.948967"
-           x="130.16837"
-           y="96.459145"
-           ry="12.943125" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="134.34317"
+      <rect
+         ry="12.943125"
+         y="96.459145"
+         x="130.16837"
+         height="98.948967"
+         width="253.94897"
+         id="rect19012"
+         style="opacity:1;fill:none;stroke:#3f3d61;stroke-width:1.33674192;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text19554"
+         y="110.93364"
+         x="134.34317"
+         style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:15px;fill:#3f3d61"
            y="110.93364"
-           id="text19554"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan19556"
-             x="134.34317"
-             y="110.93364"
-             style="font-size:15px;fill:#3f3d61">hidden_data folder</tspan><tspan
-             sodipodi:role="line"
-             x="134.34317"
-             y="127.19176"
-             style="font-size:12.5px;fill:#3f3d61"
-             id="tspan19564">- test/             <tspan
-   style="fill:#bac0d8"
-   id="tspan19593">test data with targets</tspan></tspan><tspan
-             sodipodi:role="line"
-             x="134.34317"
-             y="142.81677"
-             style="font-size:12.5px;fill:#3f3d61"
-             id="tspan19568">- performances.json     <tspan
-   style="fill:#bac0d8"
-   id="tspan19595">performances </tspan></tspan><tspan
-             sodipodi:role="line"
-             x="134.34317"
-             y="158.44177"
-             style="font-size:12.5px;fill:#bac0d8"
-             id="tspan19636">of the submission (on all test data, and </tspan><tspan
-             sodipodi:role="line"
-             x="134.34317"
-             y="174.06677"
-             style="font-size:12.5px;fill:#bac0d8"
-             id="tspan19638">for each test and train file separately)</tspan></text>
-      </g>
+           x="134.34317"
+           id="tspan19556"
+           sodipodi:role="line">hidden_data folder</tspan><tspan
+           id="tspan19564"
+           style="font-size:12.5px;fill:#3f3d61"
+           y="127.19176"
+           x="134.34317"
+           sodipodi:role="line">- test/             <tspan
+   id="tspan19593"
+   style="fill:#bac0d8">test data with targets</tspan></tspan><tspan
+           id="tspan19568"
+           style="font-size:12.5px;fill:#3f3d61"
+           y="142.81677"
+           x="134.34317"
+           sodipodi:role="line">- perf/performances.json <tspan
+   id="tspan19595"
+   style="fill:#bac0d8">performances </tspan></tspan><tspan
+           id="tspan19636"
+           style="font-size:12.5px;fill:#bac0d8"
+           y="158.44177"
+           x="134.34317"
+           sodipodi:role="line">of the submission (on all test data, and </tspan><tspan
+           id="tspan19638"
+           style="font-size:12.5px;fill:#bac0d8"
+           y="174.06677"
+           x="134.34317"
+           sodipodi:role="line">for each test and train file separately)</tspan></text>
       <g
          transform="translate(-35,0)"
          id="g19688">
