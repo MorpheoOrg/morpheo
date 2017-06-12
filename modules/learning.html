@@ -51,6 +51,30 @@
 Problems are defined by members of the platform administration.The first problem addressed by the platform is sleep stages classification, other potential problems are sleep apnea detection, insomnia detection.
 The definition of a problem requires the creation of a <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> and a set of data with corresponding targets.A <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> mainly defines what are the <strong>data targets</strong> and the <strong>performance metric</strong> used to evaluate machine learning models.
 A new <code class="docutils literal"><span class="pre">problem</span></code> must be registered in the <code class="docutils literal"><span class="pre">Orchestrator</span></code> by specifying the UUID of the <code class="docutils literal"><span class="pre">problem</span> <span class="pre">workflow</span></code> and other parameters, such as UUIDs of test data (see in <a class="reference external" href="https://morpheoorg.github.io/morpheo-orchestrator/modules/collections.html#collection-problem">the Orchestrator documentation for more details on Problem</a>).</p>
+<div class="section" id="a-name-problem-workflow-a-creation-of-a-problem-workflow">
+<span id="a-name-problem-workflow-a-creation-of-a-problem-workflow"></span><h3><a name="problem_workflow"></a> Creation of a problem workflow<a class="headerlink" href="#a-name-problem-workflow-a-creation-of-a-problem-workflow" title="Permalink to this headline">¶</a></h3>
+<p>The problem workflow is defined by organizers of a problem.
+It mainly defines what are the data targets and the performance metric used to evaluate machine learning models. More precisely, it must do two tasks:</p>
+<ol class="simple">
+<li>remove target from test files to be given to users</li>
+<li>compute performances of an algorithm</li>
+</ol>
+<p>For both tasks, the architecture of files and the training workflow <a class="reference external" href="#training_phases">described below</a> are assumed.
+A problem workflow consists of a <code class="docutils literal"><span class="pre">Dockerfile</span></code> and scripts which do the two tasks below, with the following requirements (assuming the docker image has been built with: <code class="docutils literal"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">docker-workflow</span> <span class="pre">.</span></code>):</p>
+<ol class="simple">
+<li>To run the image to copy test files from <code class="docutils literal"><span class="pre">hidden_data</span></code> directory to <code class="docutils literal"><span class="pre">submission_data</span></code> directory and remove target from them, assuming test files name is <code class="docutils literal"><span class="pre">test/test_uuid</span></code> (remark that <code class="docutils literal"><span class="pre">.hdf5</span></code> extension has been omitted for simplicity):</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="n">path_hidden_data</span><span class="p">:</span><span class="o">/</span><span class="n">hidden_data</span> <span class="o">-</span><span class="n">v</span> <span class="n">path_submission_data</span><span class="p">:</span><span class="o">/</span><span class="n">submission_data</span> <span class="n">docker</span><span class="o">-</span><span class="n">workflow</span> <span class="o">-</span><span class="n">T</span> <span class="n">detarget</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">hidden_data</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">submission_data</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li>To run the image to compute performances given true data <code class="docutils literal"><span class="pre">hidden_data/test/test_uuid</span></code> (and <code class="docutils literal"><span class="pre">submission_data/train/train_uuid</span></code>) and  predicted data <code class="docutils literal"><span class="pre">submission_data/test/pred/pred_test_uuid</span></code> (and <code class="docutils literal"><span class="pre">submission_data/train/pred/pred_train_uuid</span></code>):</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="n">path_hidden_data</span><span class="p">:</span><span class="o">/</span><span class="n">hidden_data</span> <span class="o">-</span><span class="n">v</span> <span class="n">path_submission_data</span><span class="p">:</span><span class="o">/</span><span class="n">submission_data</span> <span class="n">docker</span><span class="o">-</span><span class="n">workflow</span> <span class="o">-</span><span class="n">T</span> <span class="n">perf</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">hidden_data</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">submission_data</span>
+</pre></div>
+</div>
+<p>This must create a json file in <code class="docutils literal"><span class="pre">hidden_data/perf</span></code> directory containing performances for each file (with keys <code class="docutils literal"><span class="pre">test_uuid</span></code> and <code class="docutils literal"><span class="pre">train_uuid</span></code>) and for all test and train files (with keys <code class="docutils literal"><span class="pre">test</span></code> and <code class="docutils literal"><span class="pre">train</span></code>).</p>
+</div>
 </div>
 <div class="section" id="training-on-morpheo">
 <span id="training-on-morpheo"></span><h2>Training on Morpheo<a class="headerlink" href="#training-on-morpheo" title="Permalink to this headline">¶</a></h2>
@@ -84,7 +108,28 @@ This might change latter if needed.</p>
 <p>An algorithm is submitted to the platform via <code class="docutils literal"><span class="pre">Analytics</span></code>, which stores it to <code class="docutils literal"><span class="pre">Storage</span></code> and registers it to <code class="docutils literal"><span class="pre">Orchestrator</span></code> (see in the <a class="reference external" href="https://morpheoorg.github.io/morpheo-orchestrator/modules/collections.html#collection-algo">Orchestrator documentation for details about algorithm registration</a>).Algorithms submitted to the platform must support <strong>online learning</strong>, since models are updated each time new data are uploaded.This is the case for all <strong>neural networks</strong>.Algorithms implemented in the package <code class="docutils literal"><span class="pre">scikit</span> <span class="pre">learn</span></code> can be used if they offer a <code class="docutils literal"><span class="pre">partial_fit</span></code> method (or a <code class="docutils literal"><span class="pre">warm_start</span></code> option, TODO: check...).</p>
 <p>A submission corresponds to the submission of a <a class="reference external" href="https://docs.docker.com/engine/getstarted/">Docker</a>. It must contain the following elements:</p>
 <ul class="simple">
-<li>a <code class="docutils literal"><span class="pre">train.sh</span></code></li>
+<li>a <code class="docutils literal"><span class="pre">Dockerfile</span></code></li>
+<li>script files</li>
+</ul>
+<p>It assumes the architecture of files and training workflow described <a class="reference external" href="#training_phases">below</a>.</p>
+<p>Requirements for a submission are the following (the image being built with <code class="docutils literal"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">docker-submission</span> <span class="pre">.</span></code>):</p>
+<ul>
+<li><p class="first">To run the image to train or update the model with data in <code class="docutils literal"><span class="pre">path</span></code> (train data in <code class="docutils literal"><span class="pre">path/train/</span></code> and called <code class="docutils literal"><span class="pre">train_uuid</span></code> and test data in <code class="docutils literal"><span class="pre">path/test</span></code> and called <code class="docutils literal"><span class="pre">test_uuid</span></code>, remark that <code class="docutils literal"><span class="pre">.hdf5</span></code> extension has been removed for simplicity):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="n">path</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="n">docker</span><span class="o">-</span><span class="n">submission</span> <span class="o">-</span><span class="n">V</span> <span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">T</span> <span class="n">train</span>
+</pre></div>
+</div>
+<p>It must:</p>
+<ul class="simple">
+<li>save the model to that next call to this model will use the trained model.</li>
+<li>create predictions for data in <code class="docutils literal"><span class="pre">path/test/test_uuid</span></code> files and <code class="docutils literal"><span class="pre">path/train/train_uuid</span></code> files and save them in <code class="docutils literal"><span class="pre">path/test/pred/pred_test_uuid</span></code> files and <code class="docutils literal"><span class="pre">path/train/pred/pred_train_uuid</span></code> files.</li>
+</ul>
+</li>
+<li><p class="first">To run the image to make predictions for data in <code class="docutils literal"><span class="pre">path/test/test_uuid</span></code> files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="n">path</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="n">docker</span><span class="o">-</span><span class="n">submission</span> <span class="o">-</span><span class="n">V</span> <span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">T</span> <span class="n">predict</span>
+</pre></div>
+</div>
+<p>It must save the predictions in <code class="docutils literal"><span class="pre">path/test_pred/pred_test_uuid</span></code> files.</p>
+</li>
 </ul>
 <p>An example of a submission is given for sleep stages classification <a class="reference external" href="https://github.com/MorpheoOrg/hypnogram-wf">here</a>.</p>
 <div class="section" id="note-about-saving-trained-models">
@@ -96,11 +141,11 @@ This might change latter if needed.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="training-phase">
-<span id="training-phase"></span><h3>Training phase<a class="headerlink" href="#training-phase" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-name-training-phases-a-training-phase">
+<span id="a-name-training-phases-a-training-phase"></span><h3><a name="training_phases"></a> Training phase<a class="headerlink" href="#a-name-training-phases-a-training-phase" title="Permalink to this headline">¶</a></h3>
 <p>The workflow of the training phase is the following:</p>
 <p><img alt="training workflow" src="../_images/training.png" /></p>
-<p>This workflow assumes the following file architecture:</p>
+<p>This workflow assumes the following files architecture <a name="folders"></a>:</p>
 <p><img alt="training folders" src="../_images/folders.png" /></p>
 </div>
 </div>
