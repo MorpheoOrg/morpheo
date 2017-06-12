@@ -19,14 +19,14 @@ It mainly defines what are the data targets and the performance metric used to e
 For both tasks, the architecture of files and the training workflow [described below](#training_phases) are assumed.
 A problem workflow consists of a `Dockerfile` and scripts which do the two tasks below, with the following requirements (assuming the docker image has been built with: `docker build -t docker-workflow .`):
 1. To run the image to copy test files from `hidden_data` directory to `submission_data` directory and remove target from them, assuming test files name is `test/test_uuid` (remark that `.hdf5` extension has been omitted for simplicity):
-```
-docker run -v path_hidden_data:/hidden_data -v path_submission_data:/submission_data docker-workflow -T detarget -i /hidden_data -s /submission_data
-```
+  ```
+  docker run -v path_hidden_data:/hidden_data -v path_submission_data:/submission_data docker-workflow -T detarget -i /hidden_data -s /submission_data
+  ```
 2. To run the image to compute performances given true data `hidden_data/test/test_uuid` (and `submission_data/train/train_uuid`) and  predicted data `submission_data/test/pred/pred_test_uuid` (and `submission_data/train/pred/pred_train_uuid`):
-```
-docker run -v path_hidden_data:/hidden_data -v path_submission_data:/submission_data docker-workflow -T perf -i /hidden_data -s /submission_data
-```
-This must create a json file in `hidden_data/perf` directory containing performances for each file (with keys `test_uuid` and `train_uuid`) and for all test and train files (with keys `test` and `train`).
+  ```
+  docker run -v path_hidden_data:/hidden_data -v path_submission_data:/submission_data docker-workflow -T perf -i /hidden_data -s /submission_data
+  ```
+  This must create a json file in `hidden_data/perf` directory containing performances for each file (with keys `test_uuid` and `train_uuid`) and for all test and train files (with keys `test` and `train`).
 
 
 ## Training on Morpheo 
