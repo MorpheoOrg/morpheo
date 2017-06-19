@@ -10,6 +10,8 @@ Transactions include:
 - training of an algorithm on a set of data  
 - computation of a prediction on a given data and using a specific trained algorithm
 
+See [the white paper for more details](https://arxiv.org/pdf/1704.05017.pdf).
+
 ## Morpheo Architecture
 
 Morpheo architecture is organized as below:
