@@ -21,6 +21,8 @@ This website gathers all technical documentation of the Morpheo platform.
    modules/learning.md
 
 
+Most of the code of the platform is licensed under a [CECILL 2.1 licence](http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html) (compatible with GNU GPL).
+
 
 .. _Morpheo website: http://morpheo.co/
 .. _White Paper: https://s3.eu-central-1.amazonaws.com/morpheo.co/morpheo.pdf
