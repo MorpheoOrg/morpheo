@@ -6,7 +6,7 @@
 Welcome to Morpheo's doc!
 =========================
 
-Morpheo is an open source platform to provide an intelligent detection of patterns and pathologies in sleep physiological recordings while guaranteeing advanced data privacy and full transparency. 
+Morpheo is an **open source platform** to provide an **intelligent detection of patterns** and pathologies in sleep physiological recordings while guaranteeing advanced **data privacy** and **full transparency**. 
 
 While it is first applied to sleep physiological recording, it could be used with any sensitive data.  
 Check the `Morpheo website`_ and the `White Paper`_ for high level documentation. 

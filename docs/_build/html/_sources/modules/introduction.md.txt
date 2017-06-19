@@ -2,6 +2,14 @@
 
 ## Main concepts
 
+Morpheo is a for-privacy platform which attracts algorithms and data in order to provide accurate and automatic detection of patterns.  
+
+It is backed by a permissioned blockchain to guarantee traceability of all transactions on the platform. 
+Transactions include:
+- registration of data / algorithms on the platform   
+- training of an algorithm on a set of data  
+- computation of a prediction on a given data and using a specific trained algorithm
+
 ## Morpheo Architecture
 
 Morpheo architecture is organized as below:
@@ -20,8 +28,8 @@ Detailed documentation here (TODO).
 Entry door for algorithms providers. This is part of the data client described in the white-paper.  
 
 Detailed documentation:
-- here for Analytics (TODO) 
-- here for Notebook (TODO).  
+- [here](https://github.com/MorpheoOrg/morpheo-analytics) for Analytics
+- here for Notebook (TODO) 
 
 ### Storage 
 
@@ -37,6 +45,6 @@ Detailed documentation [here](https://github.com/MorpheoOrg/compute).
 
 ### Orchestrator 
 
-Orchestrator of operations on the platform. 
+Orchestrator of operations on the platform. This is the part which will be translated to a permissioned blockchain (soon). 
 
 Detailed documentation [here](https://morpheoorg.github.io/morpheo-orchestrator).
