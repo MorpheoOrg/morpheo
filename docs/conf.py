@@ -98,13 +98,35 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'textcolor': '#3e384a',
+    'linkcolor': '#685ff7',
+    'visitedlinkcolor': '#bd3dd9',
+    'footerbgcolor': '#FFFFFF',
+    'footertextcolor': '#878391',
+    'sidebarbgcolor': '#FFFFFF',
+    'sidebarbtncolor': '#3e384a',
+    'sidebartextcolor': '#3e384a',
+    'sidebarlinkcolor': '#685ff7',
+    'bgcolor': '#FFFFFF',
+    'relbarbgcolor': '#FFFFFF',
+    'relbartextcolor': '#3e384a',
+    'relbarlinkcolor': '#3e384a',
+    'headbgcolor': '#FFFFFF',
+    'headtextcolor': '#3e384a',
+    'headlinkcolor': '#685ff7',
+    'codebgcolor': '#edeff6',
+    'codebgcolor': '#878391',
+    'bodyfont': '"Courier New", Courier, monospace',
+    'headfont': '"Courier New", Courier, monospace',
+}
+html_logo = "mlogo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
