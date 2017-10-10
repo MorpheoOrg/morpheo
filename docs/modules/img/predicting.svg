@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="395.67847"
+   height="233.16229"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="predicting.svg"
+   inkscape:export-filename="/home/camille/Documents/MorpheoDoc/morpheo/docs/modules/img/training.png"
+   inkscape:export-xdpi="120"
+   inkscape:export-ydpi="120">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path4016"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4010"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="169.77621"
+     inkscape:cy="40.772414"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2495"
+     inkscape:window-height="1416"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3999"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="68.581487"
+       originy="-347.58421" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(68.581487,-471.61585)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="132.14285"
+       y="196.49677"
+       id="text3078"
+       sodipodi:linespacing="125%"
+       transform="translate(54.710039,421.26286)"><tspan
+         sodipodi:role="line"
+         id="tspan3080"
+         x="132.14285"
+         y="196.49677" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3363"
+       style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-70.547107,471.2382)"><flowRegion
+         id="flowRegion3365"><rect
+           id="rect3367"
+           width="60.714287"
+           height="15"
+           x="10"
+           y="-14.310756" /></flowRegion><flowPara
+         id="flowPara3369">INPU</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3371"
+       style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-51.975678,481.2382)"><flowRegion
+         id="flowRegion3373"><rect
+           id="rect3375"
+           width="90.714287"
+           height="22.142857"
+           x="7.8571429"
+           y="-12.167899" /></flowRegion><flowPara
+         id="flowPara3377"
+         style="font-size:10px">INPUT</flowPara></flowRoot>    <flowRoot
+       transform="translate(98.738608,481.2382)"
+       style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot3379"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3381"><rect
+           y="-12.167899"
+           x="7.8571429"
+           height="22.142857"
+           width="90.714287"
+           id="rect3383" /></flowRegion><flowPara
+         style="font-size:10px"
+         id="flowPara3385">TASK</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3387"
+       style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(259.73861,481.2382)"><flowRegion
+         id="flowRegion3389"><rect
+           id="rect3391"
+           width="90.714287"
+           height="22.142857"
+           x="7.8571429"
+           y="-12.167899" /></flowRegion><flowPara
+         id="flowPara3393"
+         style="font-size:10px">OUTPUT</flowPara></flowRoot>    <g
+       id="g4388"
+       transform="translate(0,-3.6213093e-5)">
+      <rect
+         ry="12.105712"
+         y="490.27066"
+         x="55.317406"
+         height="82.089691"
+         width="141.97658"
+         id="rect2985"
+         style="fill:none;stroke:#d11ce4;stroke-width:1.10000002;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3755"
+         y="504.55118"
+         x="59.724289"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-weight:normal;font-size:9px;-inkscape-font-specification:Sans;fill:#d11ce4"
+           y="504.55118"
+           x="59.724289"
+           id="tspan3757"
+           sodipodi:role="line">Compute Docker:</tspan><tspan
+           style="font-size:8px"
+           id="tspan3814"
+           y="514.80444"
+           x="59.724289"
+           sodipodi:role="line">- Get data</tspan><tspan
+           style="font-size:8px"
+           id="tspan3778"
+           y="524.80444"
+           x="59.724289"
+           sodipodi:role="line">- Get model</tspan><tspan
+           style="font-size:8px"
+           id="tspan3794"
+           y="534.80444"
+           x="59.724289"
+           sodipodi:role="line">- Decrypt data and model</tspan><tspan
+           style="font-size:8px"
+           id="tspan3072"
+           y="544.80444"
+           x="59.724289"
+           sodipodi:role="line">- Save data and model weights in </tspan><tspan
+           id="tspan4302"
+           style="font-size:8px"
+           y="554.80444"
+           x="59.724289"
+           sodipodi:role="line">&quot;Submission Volume&quot;</tspan><tspan
+           style="font-size:8px"
+           id="tspan3810"
+           y="564.80444"
+           x="59.724289"
+           sodipodi:role="line">- Build docker of model</tspan></text>
+      <rect
+         ry="8.574584"
+         y="514.57672"
+         x="-68.031487"
+         height="31.477535"
+         width="84.032791"
+         id="rect3780"
+         style="fill:none;stroke:#bac0d8;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3786"
+         y="524.97729"
+         x="-64.138031"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-weight:normal;-inkscape-font-specification:Sans"
+           y="524.97729"
+           x="-64.138031"
+           id="tspan3788"
+           sodipodi:role="line"><tspan
+             id="tspan3798"
+             style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;fill:#bac0d8;fill-opacity:1">Preduplet</tspan><tspan
+             id="tspan3148"
+             style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;fill:#bac0d8"> :</tspan></tspan><tspan
+           style="font-size:6px"
+           id="tspan3790"
+           y="532.98383"
+           x="-64.138031"
+           sodipodi:role="line">UUIDs of problem, data,  </tspan><tspan
+           style="font-size:6px"
+           id="tspan3806"
+           y="540.48383"
+           x="-64.138031"
+           sodipodi:role="line">and model </tspan></text>
+      <rect
+         style="fill:none;stroke:#3f3d61;stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3119"
+         width="81.534866"
+         height="33.75177"
+         x="244.44501"
+         y="495.80731"
+         ry="7.7756958" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="285.42288"
+         y="506.17371"
+         id="text3121"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3123"
+           x="285.42288"
+           y="506.17371"
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#3f3d61;fill-opacity:1">Submission Vol</tspan><tspan
+           sodipodi:role="line"
+           x="285.42288"
+           y="514.18024"
+           style="font-size:6px;text-align:center;text-anchor:middle"
+           id="tspan3125">test/&lt;uuid_test1&gt;</tspan><tspan
+           sodipodi:role="line"
+           x="285.42288"
+           y="521.68024"
+           style="font-size:6px;text-align:center;text-anchor:middle"
+           id="tspan3127">model/trained_model.hdf5</tspan><tspan
+           sodipodi:role="line"
+           x="285.42288"
+           y="529.18024"
+           style="font-size:6px;text-align:center;text-anchor:middle"
+           id="tspan3129" /></text>
+      <rect
+         style="fill:none;stroke:#d11ce4;stroke-width:1.10000002;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3150"
+         width="79.444138"
+         height="29.012672"
+         x="245.49036"
+         y="536.05817"
+         ry="8.586297" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#d11ce4;fill-opacity:1;stroke:none"
+         x="284.81985"
+         y="547.94318"
+         id="text3152"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3154"
+           x="286.09329"
+           y="547.94318"
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#d11ce4">Built Submission </tspan><tspan
+           id="tspan3173"
+           sodipodi:role="line"
+           x="284.81985"
+           y="557.94318"
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#d11ce4">Docker</tspan><tspan
+           sodipodi:role="line"
+           x="284.81985"
+           y="567.94318"
+           id="tspan3162" /></text>
+      <path
+         transform="translate(-70.547107,471.2382)"
+         inkscape:connector-curvature="0"
+         id="path3395"
+         d="m 95,57.832101 c 22.14286,0 22.14286,0 22.14286,0"
+         style="opacity:0;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         transform="translate(-70.547107,471.2382)"
+         inkscape:connector-curvature="0"
+         id="path5099"
+         d="m 93.571429,60.689244 c 25.000001,0 25.000001,0 25.000001,0"
+         style="fill:#3e384a;stroke:#3e384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <path
+         style="fill:#3e384a;stroke:#3e384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 203.73861,531.92744 c 25,0 25,0 25,0"
+         id="path5293"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g4363"
+       transform="translate(0,-7.7316036)">
+      <rect
+         ry="13.022964"
+         y="591.67438"
+         x="54.74033"
+         height="59.793793"
+         width="141.9781"
+         id="rect3893"
+         style="fill:none;stroke:#d11ce4;stroke-width:1.10000002;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3895"
+         y="603.55695"
+         x="59.335056"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-weight:normal;font-size:9px;-inkscape-font-specification:Sans;fill:#d11ce4"
+           y="603.55695"
+           x="59.335056"
+           id="tspan3897"
+           sodipodi:role="line">Submission Docker:</tspan><tspan
+           style="font-size:8px"
+           y="613.81018"
+           x="59.335056"
+           sodipodi:role="line"
+           id="tspan3905">- Apply model to create </tspan><tspan
+           id="tspan4304"
+           style="font-size:8px"
+           y="623.81018"
+           x="59.335056"
+           sodipodi:role="line">predictions on data</tspan><tspan
+           id="tspan3233"
+           style="font-size:8px"
+           y="633.81018"
+           x="59.335056"
+           sodipodi:role="line">- Save predictions in &quot;Submission </tspan><tspan
+           id="tspan4312"
+           style="font-size:8px"
+           y="643.81018"
+           x="59.335056"
+           sodipodi:role="line">Volume&quot;</tspan><tspan
+           style="font-size:8px"
+           id="tspan3924"
+           y="653.81018"
+           x="59.335056"
+           sodipodi:role="line" /></text>
+      <rect
+         ry="6.932642"
+         style="fill:none;stroke:#3f3d61;stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3089"
+         width="81.648346"
+         height="37.943974"
+         x="244.89864"
+         y="600.84924" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="285.96011"
+         y="610.64954"
+         id="text3091"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3093"
+           x="285.96011"
+           y="610.64954"
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#3f3d61;fill-opacity:1">Submission Vol</tspan><tspan
+           sodipodi:role="line"
+           x="285.96011"
+           y="618.65607"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#000000"
+           id="tspan3101">test/pred/&lt;uuid_test1&gt;</tspan><tspan
+           id="tspan3128"
+           sodipodi:role="line"
+           x="285.96011"
+           y="626.15607"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391">test/&lt;uuid_test1&gt;</tspan><tspan
+           id="tspan3132"
+           sodipodi:role="line"
+           x="285.96011"
+           y="633.65607"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391">model/trained_model.h5</tspan><tspan
+           sodipodi:role="line"
+           x="285.96011"
+           y="641.15607"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391"
+           id="tspan3103" /></text>
+      <rect
+         ry="6.568222"
+         style="fill:none;stroke:#3f3d61;stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3105"
+         width="81.655869"
+         height="33.245331"
+         x="-67.853172"
+         y="603.73431" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="-26.814793"
+         y="614.82874"
+         id="text3107"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3109"
+           x="-26.814793"
+           y="614.82874"
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#3f3d61;fill-opacity:1">Submission Vol</tspan><tspan
+           sodipodi:role="line"
+           x="-26.814793"
+           y="622.83527"
+           style="font-size:6px;text-align:center;text-anchor:middle"
+           id="tspan3113">test/&lt;uuid_test1&gt;</tspan><tspan
+           sodipodi:role="line"
+           x="-26.814793"
+           y="630.33527"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#000000"
+           id="tspan3117">model/trained_model.hdf5</tspan><tspan
+           sodipodi:role="line"
+           x="-26.814793"
+           y="637.83527"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#000000"
+           id="tspan3119" /></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path5287"
+         d="m 23.024322,621.0703 c 25.000001,0 25.000001,0 25.000001,0"
+         style="fill:#3e384a;stroke:#3e384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <path
+         style="fill:#3e384a;stroke:#3e384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 203.73861,621.0703 c 25,0 25,0 25,0"
+         id="path5297"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g4346"
+       transform="translate(0,-16.000006)">
+      <rect
+         ry="10.210656"
+         style="fill:none;stroke:#d11ce4;stroke-width:1.10000002;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3053"
+         width="142.02116"
+         height="48.909119"
+         x="55.675228"
+         y="671.31903" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="60.104404"
+         y="683.76959"
+         id="text3055"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3057"
+           x="60.104404"
+           y="683.76959"
+           style="font-weight:normal;font-size:9px;-inkscape-font-specification:Sans;fill:#d11ce4">Compute Docker:</tspan><tspan
+           style="font-size:8px"
+           id="tspan3139"
+           sodipodi:role="line"
+           x="60.104404"
+           y="694.02283">- Send status done or failed to </tspan><tspan
+           style="font-size:8px"
+           id="tspan3143"
+           sodipodi:role="line"
+           x="60.104404"
+           y="704.02283">Orchestrator</tspan><tspan
+           style="font-size:8px"
+           id="tspan3147"
+           sodipodi:role="line"
+           x="60.104404"
+           y="714.02283">- Send predictions to Viewer</tspan><tspan
+           id="tspan3214"
+           style="font-size:8px"
+           sodipodi:role="line"
+           x="60.104404"
+           y="724.02283" /></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path5291"
+         d="m 23.024322,697.0703 c 25.000001,0 25.000001,0 25.000001,0"
+         style="fill:#3e384a;stroke:#3e384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <rect
+         y="680.06354"
+         x="-67.601364"
+         height="37.943974"
+         width="81.648346"
+         id="rect4328"
+         style="fill:none;stroke:#3f3d61;stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         ry="6.932642" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4330"
+         y="689.86383"
+         x="-26.539886"
+         style="font-style:normal;font-weight:normal;font-size:8.92925835px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-weight:normal;font-size:8px;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#3f3d61;fill-opacity:1"
+           y="689.86383"
+           x="-26.539886"
+           id="tspan4332"
+           sodipodi:role="line">Submission Vol</tspan><tspan
+           id="tspan4334"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#000000"
+           y="697.87036"
+           x="-26.539886"
+           sodipodi:role="line">test/pred/&lt;uuid_test1&gt;</tspan><tspan
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391"
+           y="705.37036"
+           x="-26.539886"
+           sodipodi:role="line"
+           id="tspan4336">test/&lt;uuid_test1&gt;</tspan><tspan
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391"
+           y="712.87036"
+           x="-26.539886"
+           sodipodi:role="line"
+           id="tspan4338">model/trained_model.h5</tspan><tspan
+           id="tspan4340"
+           style="font-size:6px;text-align:center;text-anchor:middle;fill:#878391"
+           y="720.37036"
+           x="-26.539886"
+           sodipodi:role="line" /></text>
+    </g>
+  </g>
+</svg>

@@ -110,3 +110,7 @@ This workflow assumes the following files architecture <a name="folders"></a>:
 
 A user can request a prediction on the platform using the `Viewer`, which transfers the request to the `Orchestrator`. 
 To see how to request a prediction to the Orchestrator, see the [Orchestrator documentation](https://morpheoorg.github.io/morpheo-orchestrator/modules/collections.html#collection-preduplet)
+
+The Compute gets a new `preduplet`, corresponding to a prediction task and completes it with the following workflow:  
+
+![prediction workflow](img/predicting.png)
