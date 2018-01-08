@@ -2,6 +2,7 @@
 
 ## Main concepts
 
+
 Morpheo is a for-privacy platform which attracts algorithms and data in order to provide accurate and automatic detection of patterns.  
 
 It is backed by a permissioned blockchain to guarantee traceability of all transactions on the platform. 
@@ -14,6 +15,8 @@ See [the white paper for more details](https://arxiv.org/pdf/1704.05017.pdf).
 
 ## Morpheo Architecture
 
+
+
 Morpheo architecture is organized as below:
 
 ![Morpheo Architecture](img/archi.png)
@@ -22,8 +25,7 @@ Morpheo architecture is organized as below:
 ### Viewer
 
 Entry door for data providers. This is part of the data client described in the white-paper.  
-
-Detailed documentation here (TODO).  
+It is mainly developped by Rythm, as a close source project.
 
 ### Analytics and Notebook 
 
@@ -31,7 +33,7 @@ Entry door for algorithms providers. This is part of the data client described i
 
 Detailed documentation:
 - [here](https://github.com/MorpheoOrg/morpheo-analytics) for Analytics
-- here for Notebook (TODO) 
+- not yet available for Notebook 
 
 ### Storage 
 
@@ -47,6 +49,9 @@ Detailed documentation [here](https://github.com/MorpheoOrg/compute).
 
 ### Orchestrator 
 
-Orchestrator of operations on the platform. This is the part which will be translated to a permissioned blockchain (soon). 
+Orchestrator of operations on the platform. 
 
-Detailed documentation [here](https://morpheoorg.github.io/morpheo-orchestrator).
+This is the part which was first developped as a classic REST API (doc [here](https://morpheoorg.github.io/morpheo-orchestrator)) 
+and which is currently being translated to smart contracts of a permissioned blockchain. We use the **Hyperledger Fabric technology**. 
+
+Detailed documentation [here](https://github.com/MorpheoOrg/morpheo-orchestrator-chaincode).
